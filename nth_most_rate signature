@@ -1,0 +1,11 @@
+def nth_most_rare(list, n):
+    counts = {}
+    for num in list:
+        if num in counts:
+            counts[num] += 1
+        else:
+            counts[num] = 1
+    sorted_counts = sorted(counts.items(), key=lambda x: x[1])
+    nth_rarest_item = sorted_counts[n-1][0]
+    return nth_rarest_item
+print(nth_most_rare([5,4,5,4,5,4,4,5,3,3,3,2,2, 1,5], 2)) 
